@@ -1,0 +1,7 @@
+P1_wformula <- HandStart ~ Fp1+Fp2+F7+F3+Fz+F4+F8+FC5+FC1+FC2+FC6+T7+C3+Cz+C4+T8+TP9+CP5+CP1+CP2+CP6+TP10 +P7+P3+Pz+P4+P8+PO9+O1+Oz+O2+ PO10
+
+subj1_series1_nn <- neuralnet(P1_wformula, data=subj1_series1)
+prediction(subj1_series1_nn)
+
+write.csv (EEG_subject1, "Q:/Capstone_Backup/EEG_subject1.csv")
+predict(subj1_series1_rf)
