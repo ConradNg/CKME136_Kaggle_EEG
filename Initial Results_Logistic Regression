@@ -1,0 +1,48 @@
+###data organizer/transformer-
+
+setwd("V:/Google Drive/1a_Ryerson/CKME136 - Capstone Project/Data/Train/Subject_data")
+list.files()
+
+filenames <- list.files(path = "V:/Google Drive/1a_Ryerson/CKME136 - Capstone Project/Data/Train/Subject_data")
+EEG_subject_data <- do.call("rbind", lapply(filenames, read.csv, header = TRUE))
+
+head (EEG_subject_data)
+tail (EEG_subject_data)
+
+setwd("V:/Google Drive/1a_Ryerson/CKME136 - Capstone Project/Data/Train/Subject_event")
+filenames_2 <- list.files(path = "V:/Google Drive/1a_Ryerson/CKME136 - Capstone Project/Data/Train/Subject_event")
+EEG_subject_event <- do.call("rbind", lapply(filenames_2, read.csv, header = TRUE))
+
+###formulas
+
+P#_wformula <- Target ~ Fp1+Fp2+F7+F3+Fz+F4+F8+FC5+FC1+FC2+FC6+T7+C3+Cz+C4+T8+TP9+CP5+CP1+CP2+CP6+TP10 +P7+P3+Pz+P4+P8+PO9+O1+Oz+O2+ PO10
+formula1 <- Target ~ Fp1+F7+F3+Fz+FC5+FC1+T7+C3+Cz+TP9+CP5+CP1+P7+P3+Pz+PO9+O1+Oz+PO10
+
+
+P1_wformula <- HandStart ~ Fp1+Fp2+F7+F3+Fz+F4+F8+FC5+FC1+FC2+FC6+T7+C3+Cz+C4+T8+TP9+CP5+CP1+CP2+CP6+TP10 +P7+P3+Pz+P4+P8+PO9+O1+Oz+O2+ PO10
+P2_wformula <- FirstDigitTouch ~ Fp1+Fp2+F7+F3+Fz+F4+F8+FC5+FC1+FC2+FC6+T7+C3+Cz+C4+T8+TP9+CP5+CP1+CP2+CP6+TP10 +P7+P3+Pz+P4+P8+PO9+O1+Oz+O2+ PO10
+P3_wformula <- BothStartLoadPhase ~ Fp1+Fp2+F7+F3+Fz+F4+F8+FC5+FC1+FC2+FC6+T7+C3+Cz+C4+T8+TP9+CP5+CP1+CP2+CP6+TP10 +P7+P3+Pz+P4+P8+PO9+O1+Oz+O2+ PO10
+P4_wformula <- LiftOff ~ Fp1+Fp2+F7+F3+Fz+F4+F8+FC5+FC1+FC2+FC6+T7+C3+Cz+C4+T8+TP9+CP5+CP1+CP2+CP6+TP10 +P7+P3+Pz+P4+P8+PO9+O1+Oz+O2+ PO10
+P5_wformula <- Replace ~ Fp1+Fp2+F7+F3+Fz+F4+F8+FC5+FC1+FC2+FC6+T7+C3+Cz+C4+T8+TP9+CP5+CP1+CP2+CP6+TP10 +P7+P3+Pz+P4+P8+PO9+O1+Oz+O2+ PO10
+P6_wformula <- BothReleased ~ Fp1+Fp2+F7+F3+Fz+F4+F8+FC5+FC1+FC2+FC6+T7+C3+Cz+C4+T8+TP9+CP5+CP1+CP2+CP6+TP10 +P7+P3+Pz+P4+P8+PO9+O1+Oz+O2+ PO10
+
+formula1 <- HandStart ~ Fp1+F7+F3+Fz+FC5+FC1+T7+C3+Cz+TP9+CP5+CP1+P7+P3+Pz+PO9+O1+Oz+PO10 
+formula2 <- FirstDigitTouch ~ Fp1+F7+F3+Fz+FC5+FC1+T7+C3+Cz+TP9+CP5+CP1+P7+P3+Pz+PO9+O1+Oz+PO10 
+formula3 <- BothStartLoadPhase ~ Fp1+F7+F3+Fz+FC5+FC1+T7+C3+Cz+TP9+CP5+CP1+P7+P3+Pz+PO9+O1+Oz+PO10 
+formula4 <- LiftOff ~ Fp1+F7+F3+Fz+FC5+FC1+T7+C3+Cz+TP9+CP5+CP1+P7+P3+Pz+PO9+O1+Oz+PO10 
+formula5 <- Replace ~ Fp1+F7+F3+Fz+FC5+FC1+T7+C3+Cz+TP9+CP5+CP1+P7+P3+Pz+PO9+O1+Oz+PO10 
+formula6 <- BothReleased ~ Fp1+F7+F3+Fz+FC5+FC1+T7+C3+Cz+TP9+CP5+CP1+P7+P3+Pz+PO9+O1+Oz+PO10 
+
+###Using RWeka, Caret, e107
+###Logistic Regression per Subject in batches of 8 series and 6 formulas
+##For loops to be added in
+
+rn_train <- sample(nrow(EEG_subject1), floor(nrow(EEG_subject1)*0.8))
+EEG_train <- EEG_subject1 [rn_train,]
+EEG_test <- EEG_subject1 [-rn_train,]
+
+P1_glm_fit <- glm(P1_wformula, data=EEG_subject1, family=binomial())
+EEG_test$s1 <- predict(P1_glm_fit, type="response", newdata=EEG_test)
+pred<-prediction(EEG_test$s1, EEG_test$HandStart)
+c <- confusionMatrix(as.integer(EEG_test$s1 > 0.5), EEG_test$HandStart)
+c$table
