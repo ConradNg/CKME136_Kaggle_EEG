@@ -33,7 +33,7 @@ formula4 <- LiftOff ~ Fp1+F7+F3+Fz+FC5+FC1+T7+C3+Cz+TP9+CP5+CP1+P7+P3+Pz+PO9+O1+
 formula5 <- Replace ~ Fp1+F7+F3+Fz+FC5+FC1+T7+C3+Cz+TP9+CP5+CP1+P7+P3+Pz+PO9+O1+Oz+PO10 
 formula6 <- BothReleased ~ Fp1+F7+F3+Fz+FC5+FC1+T7+C3+Cz+TP9+CP5+CP1+P7+P3+Pz+PO9+O1+Oz+PO10 
 
-###Using RWeka, Caret, e107
+###Using RWeka, Caret, e1071, ROCR
 ###Logistic Regression per Subject in batches of 8 series and 6 formulas
 ##For loops to be added in
 
