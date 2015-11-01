@@ -9,12 +9,22 @@ P6_wformula <- BothReleased ~ Fp1+Fp2+F7+F3+Fz+F4+F8+FC5+FC1+FC2+FC6+T7+C3+Cz+C4
 
 subj1_rf <- randomForest(P1_wformula, data = EEG_subject1, Ntree=100)
 
+##failed to load; out of memory..for subject1 [1-8 series]
+###Was able to run Subject1_Series1
 
-##failed to load
+subj1_series1_rf <- randomForest(P1_wformula, data=subj1_series1, ntree=50)
+subj1_series1_rf_pred <- predict(subj1_series1_rf)
+
+### Didn't know how to extract prediction from values section.
+### Attempted using subj1_rf_pred$HandStart
+subj1_rf_pred <- read.csv("Q:/Capstone_Backup/subj1_rf_pred.csv")
+
+###Note: 12 subjects, 8 Series
 
 
-### Using ibk in Weka for Subject1_Series1
 
+
+### Using ibk in Weka for Subject1_Series1 (1 hours to load)
 
 10 Fold Cross Validation on Subj1_Series1 of 1 motion out of 6.
 
