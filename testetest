@@ -1,4 +1,0 @@
-code code code
-
-EEG_complete_c <- cbind (b, EEG_complete)
-head (EEG_complete_c)
