@@ -1,0 +1,48 @@
+> summary (EEG_complete)
+                   id                Fp1               Fp2                F7                F3                  Fz                  F4         
+ subj1_series1_0    :       1   Min.   :-5662.0   Min.   :-4906.0   Min.   :-5147.0   Min.   :-1772.000   Min.   :-1379.000   Min.   :-1972.0  
+ subj1_series1_1    :       1   1st Qu.:  -79.0   1st Qu.:  -33.0   1st Qu.:  142.0   1st Qu.: -140.000   1st Qu.: -105.000   1st Qu.:  157.0  
+ subj1_series1_10   :       1   Median :  137.0   Median :  177.0   Median :  341.0   Median :   31.000   Median :  -30.000   Median :  302.0  
+ subj1_series1_100  :       1   Mean   :  152.3   Mean   :  188.3   Mean   :  328.9   Mean   :    4.725   Mean   :   -6.705   Mean   :  293.5  
+ subj1_series1_1000 :       1   3rd Qu.:  355.0   3rd Qu.:  385.0   3rd Qu.:  533.0   3rd Qu.:  178.000   3rd Qu.:   81.000   3rd Qu.:  444.0  
+ subj1_series1_10000:       1   Max.   :23603.0   Max.   :16294.0   Max.   : 3520.0   Max.   : 3286.000   Max.   : 1109.000   Max.   : 2417.0  
+ (Other)            :17985748                                                                                                                  
+       F8                 FC5               FC1               FC2                 FC6                T7                 C3        
+ Min.   :-6468.000   Min.   :-2574.0   Min.   :-881.00   Min.   :-1520.000   Min.   :-4119.0   Min.   :-4759.00   Min.   :-967.0  
+ 1st Qu.: -172.000   1st Qu.:  152.0   1st Qu.: -43.00   1st Qu.:  -98.000   1st Qu.:    0.0   1st Qu.: -138.00   1st Qu.: 158.0  
+ Median :   24.000   Median :  309.0   Median :  55.00   Median :    0.000   Median :  140.0   Median :   55.00   Median : 283.0  
+ Mean   :    7.658   Mean   :  296.9   Mean   :  68.76   Mean   :   -2.623   Mean   :  133.5   Mean   :   66.05   Mean   : 297.2  
+ 3rd Qu.:  216.000   3rd Qu.:  453.0   3rd Qu.: 157.00   3rd Qu.:   94.000   3rd Qu.:  277.0   3rd Qu.:  243.00   3rd Qu.: 407.0  
+ Max.   : 5452.000   Max.   : 3203.0   Max.   :1303.00   Max.   : 1662.000   Max.   : 9011.0   Max.   : 5685.00   Max.   :2169.0  
+                                                                                                                                  
+       Cz                  C4                 T8                TP9                CP5                CP1                CP2          
+ Min.   :-1477.000   Min.   :-2133.00   Min.   :-8543.00   Min.   :-4368.00   Min.   :-1806.00   Min.   :-1292.00   Min.   :-2025.00  
+ 1st Qu.:  -95.000   1st Qu.:  -20.00   1st Qu.:  -87.00   1st Qu.: -135.00   1st Qu.: -120.00   1st Qu.:  -75.00   1st Qu.:  -85.00  
+ Median :   -1.000   Median :  122.00   Median :   76.00   Median :   55.00   Median :   23.00   Median :   34.00   Median :   37.00  
+ Mean   :   -6.064   Mean   :   95.59   Mean   :   67.32   Mean   :   56.76   Mean   :   17.05   Mean   :   37.26   Mean   :   40.94  
+ 3rd Qu.:   91.000   3rd Qu.:  244.00   3rd Qu.:  233.00   3rd Qu.:  248.00   3rd Qu.:  165.00   3rd Qu.:  148.00   3rd Qu.:  157.00  
+ Max.   : 1461.000   Max.   : 2554.00   Max.   :11312.00   Max.   : 8322.00   Max.   : 2039.00   Max.   : 2020.00   Max.   : 1615.00  
+                                                                                                                                      
+      CP6                TP10               P7              P3                 Pz                P4                P8               PO9          
+ Min.   :-2291.00   Min.   :-4447.0   Min.   :-2503   Min.   :-1636.00   Min.   :-1780.0   Min.   :-1995.0   Min.   :-2378.0   Min.   :-3678.00  
+ 1st Qu.: -198.00   1st Qu.:  -30.0   1st Qu.:   54   1st Qu.:  -42.00   1st Qu.:   11.0   1st Qu.:   17.0   1st Qu.:   76.0   1st Qu.: -206.00  
+ Median :  -44.00   Median :  151.0   Median :  218   Median :   92.00   Median :  136.0   Median :  153.0   Median :  239.0   Median :  -32.00  
+ Mean   :  -56.22   Mean   :  151.2   Mean   :  214   Mean   :   91.32   Mean   :  127.7   Mean   :  154.4   Mean   :  235.9   Mean   :  -33.45  
+ 3rd Qu.:   99.00   3rd Qu.:  337.0   3rd Qu.:  379   3rd Qu.:  227.00   3rd Qu.:  253.0   3rd Qu.:  291.0   3rd Qu.:  398.0   3rd Qu.:  140.00  
+ Max.   : 2786.00   Max.   : 4184.0   Max.   : 2369   Max.   : 1612.00   Max.   : 1732.0   Max.   : 1820.0   Max.   : 2949.0   Max.   : 3924.00  
+                                                                                                                                                 
+       O1                Oz                  O2                PO10             HandStart       FirstDigitTouch   BothStartLoadPhase
+ Min.   :-1689.0   Min.   :-1935.000   Min.   :-2074.00   Min.   :-2436.000   Min.   :0.00000   Min.   :0.00000   Min.   :0.00000   
+ 1st Qu.:    7.0   1st Qu.: -161.000   1st Qu.: -214.00   1st Qu.: -184.000   1st Qu.:0.00000   1st Qu.:0.00000   1st Qu.:0.00000   
+ Median :  164.0   Median :   -2.000   Median :  -44.00   Median :    3.000   Median :0.00000   Median :0.00000   Median :0.00000   
+ Mean   :  158.5   Mean   :   -3.123   Mean   :  -49.46   Mean   :   -2.197   Mean   :0.02602   Mean   :0.02602   Mean   :0.02598   
+ 3rd Qu.:  318.0   3rd Qu.:  155.000   3rd Qu.:  121.00   3rd Qu.:  183.000   3rd Qu.:0.00000   3rd Qu.:0.00000   3rd Qu.:0.00000   
+ Max.   : 1631.0   Max.   : 1638.000   Max.   : 1731.00   Max.   : 5045.000   Max.   :1.00000   Max.   :1.00000   Max.   :1.00000   
+                                                                                                                                    
+    LiftOff           Replace         BothReleased    
+ Min.   :0.00000   Min.   :0.00000   Min.   :0.00000  
+ 1st Qu.:0.00000   1st Qu.:0.00000   1st Qu.:0.00000  
+ Median :0.00000   Median :0.00000   Median :0.00000  
+ Mean   :0.02602   Mean   :0.02602   Mean   :0.02602  
+ 3rd Qu.:0.00000   3rd Qu.:0.00000   3rd Qu.:0.00000  
+ Max.   :1.00000   Max.   :1.00000   Max.   :1.00000 
