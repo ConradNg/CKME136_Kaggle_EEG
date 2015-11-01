@@ -1,0 +1,36 @@
+# Loop through subjects
+for (j in 1:total_subj){
+    print(paste('Currently analysing subject',j))
+    list_subj_traindata <- list() # initialize list   
+    subject <- j
+    # obtain all training data
+    for (i in 1:sub_sample) {
+        file_name_eeg <- paste('../input/train/subj',subject,'_series',i,
+                               '_data.csv',sep='') 
+        file_name_events <- paste('../input/train/subj',subject,'_series',i,
+                                  '_events.csv',sep='') 
+        eeg <- read.csv(file_name_eeg, header=TRUE,
+                        colClasses=c("character",rep("numeric",32)))#read data.csv based on file name
+        events <- read.csv(file_name_events,header=TRUE,
+                           colClasses=c("character",rep("numeric",6))) #read events.csv based on file name
+        list_subj_traindata[[i]]<-merge_sort(eeg,events)
+        rm(eeg,events)
+    }
+    #merge all training series data in 1 single data frame per subject
+    train_variable_name <- paste('subj',subject,'_traindata',sep='')
+    assign(train_variable_name,rbind_all(list_subj_traindata))
+    rm(list_subj_traindata)
+    
+    
+    
+    
+    
+    
+    # combine all subject predictions into 1 dataframe for submission
+my_submission <- rbind_all(list_subj_predictions)
+my_submission[is.na(my_submission)] <- 0
+names(my_submission) <- c('id','HandStart','FirstDigitTouch',
+                          'BothStartLoadPhase','LiftOff','Replace','BothReleased')
+my_submission[,2:ncol(my_submission)]= round(my_submission[,2:ncol(my_submission)],digits=4) # reduce file size by limiting number of decimal places
+
+write.csv(my_submission,file='submission1.csv',row.names=FALSE)
