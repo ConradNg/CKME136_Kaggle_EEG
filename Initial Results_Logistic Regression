@@ -1,48 +1,55 @@
-###data organizer/transformer-
+P1_wformula <- HandStart ~ Fp1+Fp2+F7+F3+Fz+F4+F8+FC5+FC1+FC2+FC6+T7+C3+Cz+C4+T8+TP9+CP5+CP1+CP2+CP6+TP10+P7+P3+Pz+P4+P8+PO9+O1+Oz+O2+PO10
+P2_wformula <- FirstDigitTouch ~ Fp1+Fp2+F7+F3+Fz+F4+F8+FC5+FC1+FC2+FC6+T7+C3+Cz+C4+T8+TP9+CP5+CP1+CP2+CP6+TP10+P7+P3+Pz+P4+P8+PO9+O1+Oz+O2+PO10
+P3_wformula <- BothStartLoadPhase ~ Fp1+Fp2+F7+F3+Fz+F4+F8+FC5+FC1+FC2+FC6+T7+C3+Cz+C4+T8+TP9+CP5+CP1+CP2+CP6+TP10+P7+P3+Pz+P4+P8+PO9+O1+Oz+O2+PO10
+P4_wformula <- LiftOff ~ Fp1+Fp2+F7+F3+Fz+F4+F8+FC5+FC1+FC2+FC6+T7+C3+Cz+C4+T8+TP9+CP5+CP1+CP2+CP6+TP10+P7+P3+Pz+P4+P8+PO9+O1+Oz+O2+PO10
+P5_wformula <- Replace ~ Fp1+Fp2+F7+F3+Fz+F4+F8+FC5+FC1+FC2+FC6+T7+C3+Cz+C4+T8+TP9+CP5+CP1+CP2+CP6+TP10+P7+P3+Pz+P4+P8+PO9+O1+Oz+O2+PO10
+P6_wformula <- BothReleased ~ Fp1+Fp2+F7+F3+Fz+F4+F8+FC5+FC1+FC2+FC6+T7+C3+Cz+C4+T8+TP9+CP5+CP1+CP2+CP6+TP10+P7+P3+Pz+P4+P8+PO9+O1+Oz+O2+PO10
 
-setwd("V:/Google Drive/1a_Ryerson/CKME136 - Capstone Project/Data/Train/Subject_data")
-list.files()
-
-filenames <- list.files(path = "V:/Google Drive/1a_Ryerson/CKME136 - Capstone Project/Data/Train/Subject_data")
-EEG_subject_data <- do.call("rbind", lapply(filenames, read.csv, header = TRUE))
-
-head (EEG_subject_data)
-tail (EEG_subject_data)
-
-setwd("V:/Google Drive/1a_Ryerson/CKME136 - Capstone Project/Data/Train/Subject_event")
-filenames_2 <- list.files(path = "V:/Google Drive/1a_Ryerson/CKME136 - Capstone Project/Data/Train/Subject_event")
-EEG_subject_event <- do.call("rbind", lapply(filenames_2, read.csv, header = TRUE))
-
-###formulas
-
-P#_wformula <- Target ~ Fp1+Fp2+F7+F3+Fz+F4+F8+FC5+FC1+FC2+FC6+T7+C3+Cz+C4+T8+TP9+CP5+CP1+CP2+CP6+TP10 +P7+P3+Pz+P4+P8+PO9+O1+Oz+O2+ PO10
-formula1 <- Target ~ Fp1+F7+F3+Fz+FC5+FC1+T7+C3+Cz+TP9+CP5+CP1+P7+P3+Pz+PO9+O1+Oz+PO10
-
-
-P1_wformula <- HandStart ~ Fp1+Fp2+F7+F3+Fz+F4+F8+FC5+FC1+FC2+FC6+T7+C3+Cz+C4+T8+TP9+CP5+CP1+CP2+CP6+TP10 +P7+P3+Pz+P4+P8+PO9+O1+Oz+O2+ PO10
-P2_wformula <- FirstDigitTouch ~ Fp1+Fp2+F7+F3+Fz+F4+F8+FC5+FC1+FC2+FC6+T7+C3+Cz+C4+T8+TP9+CP5+CP1+CP2+CP6+TP10 +P7+P3+Pz+P4+P8+PO9+O1+Oz+O2+ PO10
-P3_wformula <- BothStartLoadPhase ~ Fp1+Fp2+F7+F3+Fz+F4+F8+FC5+FC1+FC2+FC6+T7+C3+Cz+C4+T8+TP9+CP5+CP1+CP2+CP6+TP10 +P7+P3+Pz+P4+P8+PO9+O1+Oz+O2+ PO10
-P4_wformula <- LiftOff ~ Fp1+Fp2+F7+F3+Fz+F4+F8+FC5+FC1+FC2+FC6+T7+C3+Cz+C4+T8+TP9+CP5+CP1+CP2+CP6+TP10 +P7+P3+Pz+P4+P8+PO9+O1+Oz+O2+ PO10
-P5_wformula <- Replace ~ Fp1+Fp2+F7+F3+Fz+F4+F8+FC5+FC1+FC2+FC6+T7+C3+Cz+C4+T8+TP9+CP5+CP1+CP2+CP6+TP10 +P7+P3+Pz+P4+P8+PO9+O1+Oz+O2+ PO10
-P6_wformula <- BothReleased ~ Fp1+Fp2+F7+F3+Fz+F4+F8+FC5+FC1+FC2+FC6+T7+C3+Cz+C4+T8+TP9+CP5+CP1+CP2+CP6+TP10 +P7+P3+Pz+P4+P8+PO9+O1+Oz+O2+ PO10
-
-formula1 <- HandStart ~ Fp1+F7+F3+Fz+FC5+FC1+T7+C3+Cz+TP9+CP5+CP1+P7+P3+Pz+PO9+O1+Oz+PO10 
-formula2 <- FirstDigitTouch ~ Fp1+F7+F3+Fz+FC5+FC1+T7+C3+Cz+TP9+CP5+CP1+P7+P3+Pz+PO9+O1+Oz+PO10 
-formula3 <- BothStartLoadPhase ~ Fp1+F7+F3+Fz+FC5+FC1+T7+C3+Cz+TP9+CP5+CP1+P7+P3+Pz+PO9+O1+Oz+PO10 
-formula4 <- LiftOff ~ Fp1+F7+F3+Fz+FC5+FC1+T7+C3+Cz+TP9+CP5+CP1+P7+P3+Pz+PO9+O1+Oz+PO10 
-formula5 <- Replace ~ Fp1+F7+F3+Fz+FC5+FC1+T7+C3+Cz+TP9+CP5+CP1+P7+P3+Pz+PO9+O1+Oz+PO10 
-formula6 <- BothReleased ~ Fp1+F7+F3+Fz+FC5+FC1+T7+C3+Cz+TP9+CP5+CP1+P7+P3+Pz+PO9+O1+Oz+PO10 
 
 ###Using RWeka, Caret, e1071, ROCR
-###Logistic Regression per Subject in batches of 8 series and 6 formulas
-##For loops to be added in
+###Requires tidyr, stringR
 
-rn_train <- sample(nrow(EEG_subject1), floor(nrow(EEG_subject1)*0.8))
-EEG_train <- EEG_subject1 [rn_train,]
-EEG_test <- EEG_subject1 [-rn_train,]
+i <- NULL
+j<- NULL
+EEG_prediction <- NULL
+EEG_prediction_t1 <- NULL
+EEG_prediction_tf <- NULL
+EEG_reference_tf <- NULL
+EEG_reference <- NULL
 
-P1_glm_fit <- glm(P1_wformula, data=EEG_subject1, family=binomial())
-EEG_test$s1 <- predict(P1_glm_fit, type="response", newdata=EEG_test)
-pred<-prediction(EEG_test$s1, EEG_test$HandStart)
-c <- confusionMatrix(as.integer(EEG_test$s1 > 0.5), EEG_test$HandStart)
-c$table
+
+for (i in 1:12)
+	{
+	print(paste('Loading subset data for subject',i))
+	sub <- paste('subj',i)
+	sub <- str_replace_all(sub, fixed(" "), "")
+	currentdata <- subset(EEG_complete_c, subject==sub)
+	
+	print(paste('Sampling data for subject',i))	
+	rn_train <- sample(nrow(currentdata), floor(nrow(currentdata)*0.8))
+	EEG_train <- currentdata [rn_train,]
+	EEG_test <- currentdata [-rn_train,]
+	
+	for (j in 1:6)
+		{
+		print(paste('Anaylzing subset data for subject',i,'-',j))
+		formula <- paste('P',j,'_wformula')
+		formula <- str_replace_all(formula, fixed(" "), "")
+		print(paste('Running..', formula))
+	
+		glm_fit <- glm(formula, data=currentdata, family=binomial())
+		
+		EEG_prediction_t1 <- predict(glm_fit, type="response", newdata=EEG_test)		
+		EEG_prediction_tf <- cbind (EEG_prediction_tf, EEG_prediction_t1)		
+
+		EEG_reference_tf <-EEG_test[37:42]
+		}
+
+	EEG_prediction <- rbind(EEG_prediction, EEG_prediction_tf)
+	EEG_reference <- rbind(EEG_reference, EEG_reference_tf)
+	
+	EEG_prediction_t1 <- NULL
+	EEG_prediction_tf <- NULL
+	EEG_reference_tf <- NULL
+	currentdata <- NULL
+	}
